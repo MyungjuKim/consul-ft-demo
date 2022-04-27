@@ -1,0 +1,18 @@
+spring.application.name: consul-ft-demo
+server.port: 8080
+
+spring.cloud:
+  consul:
+    host: localhost
+    port: 8500
+    config:
+      format: FILES
+      prefix: config/demo
+      name: feature-toggles
+      watch:
+        wait-time: 5
+    discovery:
+      enabled: false
+
+spring.config:
+  import: "optional:consul:"
